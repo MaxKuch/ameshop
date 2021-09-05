@@ -1,0 +1,145 @@
+@import '../../styles/variables';
+
+.cart {
+    position: absolute;
+    right: 15px;
+    top: 46px;
+    button {
+        cursor: pointer;
+        background: transparent;
+        border: none;
+    }
+    &Counter{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: $accent;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 10px;
+        line-height: 19px;
+        text-align: center;
+        letter-spacing: 0.065em;
+        color: #fff;
+    }
+    &Title {
+        font-size: 28px;
+        color: #222;
+        text-align: center;
+    }
+    &Items {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        @media screen and (max-width: 625px){
+            width: 90%;
+        }
+        @media screen and (max-width: 425px){
+            width: 100%;
+        }
+    }
+    &Item{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        &::after{
+            position: absolute;
+            display: block;
+            content: '';
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            height: 1px;
+            background-color: #EDEDED;
+        }
+        &Left {
+            display: flex;
+            @media screen and (max-width: 425px){
+                flex-direction: column;
+            }
+            img {
+                border-radius: 5px;
+                object-fit: cover;
+                width: 86px;
+                height: 74px;
+            }
+            h4, h5, h6 {
+                font-style: normal;
+                font-size: 16px;
+                letter-spacing: 0.065em;
+            }
+            h5 {
+                font-weight: 500;
+            }
+            h4, h6 {
+                font-weight: 600;
+                color: $accent;
+            }
+        }
+        &Right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        &Info {
+            @media screen and (min-width: 425px){
+                margin-left: 10px;
+            }
+            @media screen and (max-width: 425px){
+                margin-top: 10px;
+            }
+        }
+        &Control {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            font-size: 18px;
+            button:first-child {
+                margin-right: 5px;
+            }
+            button:last-child {
+                margin-left: 5px;
+            }
+        }
+    }
+    &Total {
+        margin-left: auto!important;
+        font-size: 18px;
+    }
+    &DeliveryLink {
+        margin-top: 5px;
+    }
+}
+
+.emptyMessage {
+    font-size: 18px;
+}
+
+
+.modal {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &Close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 20px;
+        height: 20px;
+        font-size: 24px;
+    }
+}

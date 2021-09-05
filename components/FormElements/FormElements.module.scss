@@ -1,0 +1,42 @@
+@import '../../styles/variables';
+
+.input {
+    display: flex;
+    flex-direction: column;
+    label {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 51.5%;
+        letter-spacing: 0.065em;
+        margin-bottom: 6px;
+        margin-left: 5px;
+    }
+    input, textarea {
+        border-radius: 3px;
+        border: none;
+        background-color: $bg-light;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid $bg-light;
+        &:focus {
+            outline: none;
+            border: 1px solid darken($bg-light, 5);
+        }
+        
+    }
+    &.invalid {
+        input, textarea {
+            border: 1px solid $red;
+            color: $red;
+        }
+        label {
+            color: $red;
+        }
+    }
+}
+
+.errorMessage {
+    margin: 0;
+    color: $red;
+}

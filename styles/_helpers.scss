@@ -1,0 +1,21 @@
+@import "variables";
+
+.accent {
+    color: $accent;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.medium {
+    font-weight: 500;
+}
+
+.bold {
+    font-weight: bold!important;
+}
+
+.t-center {
+    text-align: center;
+}

@@ -1,0 +1,95 @@
+@import '../../styles/variables';
+
+.sectionHeader {
+    margin-top: 55px;
+    margin-bottom: 17px;
+    display: flex;
+    justify-content: center;
+}
+
+.filtration {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 51.5%;
+    letter-spacing: 0.065em;
+    color: #494949;
+    @media screen and (max-width: 450px){
+        flex-direction: column;
+        align-items: center;
+    }
+    li {
+        list-style: none;
+        @media screen and (max-width: 450px){
+            &:not(:last-child) {
+                margin-bottom: 8px;
+                &::after {
+                    margin-top: 8px;
+                    display: block;
+                    content: '';
+                    height: 1px;
+                    width: 45px;
+                    background-color: #D2D2D2;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+        @media screen and (min-width: 450px){
+            display: flex;
+            &:not(:last-child) {
+                margin-right: 8px;
+                &::after {
+                    display: block;
+                    content: '';
+                    width: 1px;
+                    height: 20px;
+                    background-color: #D2D2D2;
+                    margin-left: 8px;
+                }
+            }
+        }
+        
+        button {
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            transition: all .2s ease;
+            &:hover {
+                color: $accent;
+            }
+        }
+    }
+    &Current {
+        color: $accent;
+    }
+}
+
+.products {
+    margin: 70px 20px 50px 20px;
+    @media screen and (max-width: 900px){
+        margin: 25px 10px 30px 10px;
+    }
+}
+
+.contentWrapper {
+    margin-bottom: 150px;
+    @media screen and (max-width: 450px){
+        margin: 0 -15px 60px -15px;
+        border-radius: 0;
+    }
+}
+
+.emptyMessage {
+    display: block;
+    font-size: 18px;
+}
+
+.productCard {
+    display: flex;
+    justify-content: center;
+}

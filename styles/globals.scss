@@ -1,0 +1,125 @@
+@import 'antd/dist/antd.css';
+@import 'helpers';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, Montserrat, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    overflow-x: hidden;
+}
+
+#__next {
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6{
+  margin: 0!important;
+}
+
+
+@font-face {
+  font-family: 'MontserratAlternates';
+  src: url("/fonts/MontserratAlternates/MontserratAlternates-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JosefinSans';
+  src: url("/fonts/JosefinSans/JosefinSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("/fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+// ---- TYPOGRAPHY ----
+
+.title {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 100%;
+  letter-spacing: 0.065em;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 500;
+  line-height: 139%;
+  letter-spacing: 0.065em;
+}
+
+.container {
+  max-width: 1390px;
+  padding: 0 70px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 768px) {
+    padding: 0 30px;
+  }
+  @media screen and (max-width: 450px) {
+    padding: 0 15px;
+  }
+}
+
+.mini-btn {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: -1px;
+  border-radius: 3px;
+  border: none;
+  &--red {
+    background-color: $red;
+  }
+  &--accent {
+    background-color: $accent;
+  }
+  &--disabled {
+    background-color: $disabled;
+  }
+}

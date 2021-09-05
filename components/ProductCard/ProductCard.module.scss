@@ -1,0 +1,78 @@
+@import '../../styles/variables';
+
+.productCard {
+    position: relative;
+    max-width: 200px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 10px 10px 29px 10px;
+    min-height: 262px;
+    filter: drop-shadow(3px 4px 15px rgba(0, 0, 0, 0.05));
+    h2, h3 {
+        font-style: normal;
+        font-size: 14px;
+        line-height: 110%;
+        text-align: center;
+        letter-spacing: 0.065em;
+    }
+    h2 {
+        font-weight: bold;
+        color: $accent;
+        text-transform: uppercase;
+        margin-bottom: 3px!important;
+    }
+    h3 {
+        font-weight: 500;
+        color: #000000;
+        margin-bottom: 8px!important;
+    }
+    &Big {
+        max-width: 320px;
+        padding: 15px 15px 57px 15px;
+        .imgWrapper {
+            margin-bottom: 15px;
+            img {
+                height: 250px;
+            }
+        }
+    }
+}
+
+.addToCartBtn{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    button {
+        width: 100%;
+        border-radius: 0 0 5px 5px;
+    }
+}
+
+.imgWrapper {
+    position: relative;
+    margin-bottom: 5px;
+    img {
+        border-radius: 6px;
+        width: 100%;
+        height: 177px;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+.price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 5px;
+    background-color: $accent;
+    border-radius: 0 5px 0 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 110%;
+    letter-spacing: 0.065em;
+    color: #FFFFFF;
+}

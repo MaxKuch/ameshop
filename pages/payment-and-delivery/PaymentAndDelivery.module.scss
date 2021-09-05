@@ -1,0 +1,17 @@
+.text {
+    color: #2c2c2c;
+    margin-bottom: 50px;
+    @media screen and (max-width: 450px){
+        font-size: 13px;
+    }
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    @media screen and (max-width: 450px){
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}

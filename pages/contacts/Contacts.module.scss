@@ -1,0 +1,59 @@
+@import '../../styles/variables';
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.text {
+    color: #2c2c2c;
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 34px;
+    padding: 0 15px;
+    @media screen and (max-width: 450px){
+        font-size: 13px;
+        text-align: left;
+    }
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    a:not(:last-child) {
+        margin-right: 15px;
+    }
+}
+
+.form {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    max-width: 420px;
+    width: 90%;
+    &Title{
+        color: #222;
+        font-weight: 500;
+        font-size: 36px;
+        @media screen and (max-width: 450px){
+            font-size: 28px;
+        }
+    }
+    & > *:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    button{
+        width: 100%;
+        border-radius: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
