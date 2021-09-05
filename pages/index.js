@@ -50,11 +50,16 @@ export default function Home({description}) {
 }
 
 export async function getStaticProps() {
-  const { data: { description: description } } = await axios.get('/main-page')
+  try {
+    const { data: { description: description } } = await axios.get('/main-page')
 
-  return {
-    props: {
-      description
+    return {
+      props: {
+        description
+      }
     }
+  } catch(err) {
+    console.error(err)
   }
+  
 }
