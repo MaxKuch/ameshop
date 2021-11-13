@@ -25,7 +25,7 @@ export default function Home({description}) {
                   height={45}
                   alt="A"
               />
-                melchenko music
+                melnikova music
               </h1>
               </div>
             </div>
