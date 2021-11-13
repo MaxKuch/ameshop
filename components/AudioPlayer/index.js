@@ -60,6 +60,7 @@ export default function AudioPlayer({ songs }){
         }
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     React.useEffect(initAudio, [currentSong])
 
     React.useEffect(() => {

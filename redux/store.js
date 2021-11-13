@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import cartSlice from './slices/cartSlice'
-import orderSlice from './slices/orderSlice'
 import loadingSlice from './slices/loadingSlice'
+import authSlice from './slices/authSlice'
 
 export default configureStore({
   reducer: {
     cart: cartSlice,
-    order: orderSlice,
-    loading: loadingSlice
+    loading: loadingSlice,
+    auth: authSlice
   }
 })

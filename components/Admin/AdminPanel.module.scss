@@ -1,0 +1,29 @@
+.title {
+    color: #fff;
+    font-size: xx-large;
+}
+
+.content {
+    padding: 100px 0;
+}
+
+.header {
+    padding: 0 24px;
+    background: #0083ff;
+}
+
+
+.logoutBtn {
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: .1em;
+    &:hover {
+        color: #fff;
+    }
+}
+
+.productsModal {
+    & > *:first-child {
+        top: 0;
+    }
+}

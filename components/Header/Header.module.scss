@@ -13,7 +13,7 @@
         top: 0;
         left: 0;
         height: 115px;
-        width: 100vw;
+        width: calc(100vw - 17px);
         background-color: $bg;
     }
     &Transparent{

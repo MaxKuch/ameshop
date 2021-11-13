@@ -26,11 +26,15 @@ export const cartSlice = createSlice({
                 product.amount--
                 localStorageWorker.setItem('products', state.products)
             }
+        },
+        clearCart(state) {
+            state.products = []
+            localStorageWorker.setItem('products', [])
         }
     }
 })
 
-export const { addProduct, removeProduct, increment, decrement } = cartSlice.actions
+export const { addProduct, removeProduct, increment, decrement, clearCart } = cartSlice.actions
 
 export default cartSlice.reducer
 

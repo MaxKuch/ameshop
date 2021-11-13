@@ -69,7 +69,6 @@
 
 .songItem {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     & > * {
         &:not(:last-child) {
@@ -81,6 +80,7 @@
     }
     &Name {
         font-size: 13px;
+        flex-grow: 1;
         @media screen and (max-width: 400px) {
             font-size: 12px;
         }

@@ -1,7 +1,8 @@
 import React from "react"
+import axios from '../../core/axios'
 import { useSelector, useDispatch } from "react-redux"
-import { removeProduct, increment, decrement } from "../../redux/slices/cartSlice"
-import { addOrderThunk } from "../../redux/thunks/order"
+import { removeProduct, increment, decrement, clearCart } from "../../redux/slices/cartSlice"
+import { setLoading } from "../../redux/slices/loadingSlice"
 import Image from "next/image"
 import Link from 'next/link'
 import cartIcon from '../../assets/icons/common/cart.svg'
@@ -21,7 +22,7 @@ export default function Cart() {
     const [productsAmount, setProductsAmount] = React.useState(0)
 
     React.useEffect(() => {
-        setTotalSum(products.reduce((sum, product) => sum += product.price * product.amount, 0))
+        setTotalSum( Number(products.reduce((sum, product) => sum += product.price * product.amount, 0).toFixed(2)) )
         setProductsAmount(products.reduce((amount, product) => amount += product.amount, 0))
     }, [products])
 
@@ -29,8 +30,15 @@ export default function Cart() {
         setVisible(true)
     }
 
-    const handleCheckout = () => {
-        dispatch(addOrderThunk())
+    const handleCheckout = async () => {
+        dispatch(setLoading(true))
+        await axios.post(`/orders`, {
+            status: 'InCart',
+            Item: products.map(({amount, id}) => ({Count: amount, product: id}))
+        })
+        dispatch(setLoading(false))
+        dispatch(clearCart())
+        setVisible(false)
     }
 
     const handleCancel = () => {
@@ -75,7 +83,7 @@ export default function Cart() {
                                         <div key={product.id} className={styles.cartItem}>
                                             <div className={styles.cartItemLeft}>
                                                 <img 
-                                                    src={fromFileToUrl(product.img)} 
+                                                    src={fromFileToUrl(product.img[0])} 
                                                     alt="product img"
                                                 />
                                                 <div className={styles.cartItemInfo}>
