@@ -101,9 +101,9 @@ export default function ProductForm({ type, form, productTypes, onFinish, fields
                     },
                     () => ({
                         validator(_, value) {
-                          if(slugs.some(([slug, id]) => slug === value && id !== currentProduct))
-                            return Promise.reject(new Error('Идентификатор должен быть уникальным!'))
-                        return Promise.resolve()
+                            if(slugs.some(({ slug, id }) => slug === value && id !== currentProduct))
+                                return Promise.reject(new Error('Идентификатор должен быть уникальным!'))
+                            return Promise.resolve()
                         },
                     })
                 ]}
