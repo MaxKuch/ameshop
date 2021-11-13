@@ -2,7 +2,7 @@ import { Upload, Form, Col, Button, Input, InputNumber, Select, message } from '
 import EditUploads from './EditProductUploads'
 import AddUploads from './AddProductUploads'
 
-export default function ProductForm({ type, form, productTypes, onFinish, fields, onFieldsChange, isLoading, slugs, ...props }) {
+export default function ProductForm({ type, form, productTypes, onFinish, fields, onFieldsChange, isLoading, slugs, currentProduct, ...props }) {
     const permittedImageFormats = ['image/jpg', 'image/jpeg', 'image/png', 'image/webp']
     const permittedAudioFormats = ['audio/mpeg', 'audio/mp4', 'audio/wav', 'audio/x-wav', 'audio/ogg']
 
@@ -101,9 +101,9 @@ export default function ProductForm({ type, form, productTypes, onFinish, fields
                     },
                     () => ({
                         validator(_, value) {
-                          if(slugs.indexOf(value) !== -1)
-                            return Promise.resolve()
-                          return Promise.reject(new Error('Идентификатор должен быть уникальным!'))
+                          if(slugs.some(([slug, id]) => slug === value && id !== currentProduct))
+                            return Promise.reject(new Error('Идентификатор должен быть уникальным!'))
+                        return Promise.resolve()
                         },
                     })
                 ]}
