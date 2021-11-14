@@ -73,6 +73,7 @@ export default function Contatcs({pageHeader}) {
 export async function getStaticProps() {
     const { data: pageHeader } = await axios.get('/contacts-page')
     return {
-        props: { pageHeader }
+        props: { pageHeader },
+        revalidate: 10
     }
 }

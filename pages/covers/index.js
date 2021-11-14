@@ -28,6 +28,7 @@ export async function getStaticProps() {
     const { data: covers } = await axios.get('/covers')
     const { data: pageHeader } = await axios.get('/covers-page')
     return {
-        props: { covers,  pageHeader }
+        props: { covers,  pageHeader },
+        revalidate: 10
     }
 }

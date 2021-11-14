@@ -26,7 +26,7 @@ export default function ProductForm({ type, form, onFinish, fields, onFieldsChan
             message.error(`У файла ${file.name} недопустимый формат`)
             return Upload.LIST_IGNORE
         }
-        return true
+        return false
     }
 
     return (
