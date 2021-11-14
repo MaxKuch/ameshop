@@ -26,6 +26,7 @@ export default function Shop({ products, pageHeader }){
     const [currentProducts, setCurrentProducts] = React.useState(findProducts(currentCategorie))
 
     React.useEffect(() => {
+        console.log(findProducts(currentCategorie))
         setCurrentProducts(findProducts(currentCategorie))
     }, [currentCategorie, findProducts])
 
