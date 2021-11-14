@@ -26,7 +26,6 @@ export default function Shop({ products, pageHeader }){
     const [currentProducts, setCurrentProducts] = React.useState(findProducts(currentCategorie))
 
     React.useEffect(() => {
-        console.log(findProducts(currentCategorie))
         setCurrentProducts(findProducts(currentCategorie))
     }, [currentCategorie, findProducts])
 
@@ -96,7 +95,7 @@ export default function Shop({ products, pageHeader }){
                         <AudioContext.Provider value={{audio, setAudio}}>
                         {
                             currentProducts.map(product => (
-                                <Col key={product.subtitle} span={gridSpan}>
+                                <Col key={product.slug} span={gridSpan}>
                                     <div className={styles.productCard}>
                                         <ProductCard 
                                             img={product.image.map(image => fromFileToUrl(image.url))} 
