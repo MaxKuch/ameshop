@@ -70,6 +70,7 @@
                 object-fit: cover;
                 width: 86px;
                 height: 74px;
+                flex-shrink: 0;
             }
             h4, h5, h6 {
                 font-style: normal;
