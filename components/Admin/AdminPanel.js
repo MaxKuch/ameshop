@@ -13,9 +13,10 @@ import Main from './pages/Main'
 import CoversPage from './pages/Covers'
 import Contacts from './pages/Contacts'
 import Agreement from './pages/Agreement'
+import ShopPage from './pages/Shop'
 import PaymentAndDelivery from './pages/PaymentAndDelivery'
 
-const sections = [ProductTypes, Products, Main, CoversPage, Contacts, Agreement, PaymentAndDelivery, Covers, Orders]
+const sections = [ProductTypes, Products, Main, ShopPage, CoversPage, Contacts, Agreement, PaymentAndDelivery, Covers, Orders ]
 
 const { Header, Sider, Content } = Layout
 const { SubMenu } = Menu
@@ -60,13 +61,14 @@ export default function AdminPanel() {
 
                         <SubMenu key='pages' title='Страницы'>
                             <Menu.Item key={2}>Главная</Menu.Item>
-                            <Menu.Item key={3}>Каверы</Menu.Item>
-                            <Menu.Item key={4}>Контакты</Menu.Item>
-                            <Menu.Item key={5}>Соглашение</Menu.Item>
-                            <Menu.Item key={6}>Оплата и доставка</Menu.Item>
+                            <Menu.Item key={3}>Магазин</Menu.Item>
+                            <Menu.Item key={4}>Каверы</Menu.Item>
+                            <Menu.Item key={5}>Контакты</Menu.Item>
+                            <Menu.Item key={6}>Соглашение</Menu.Item>
+                            <Menu.Item key={7}>Оплата и доставка</Menu.Item>
                         </SubMenu>
-                        <Menu.Item key={7}>Каверы</Menu.Item>
-                        <Menu.Item key={8}>Заказы</Menu.Item>
+                        <Menu.Item key={8}>Каверы</Menu.Item>
+                        <Menu.Item key={9}>Заказы</Menu.Item>
                     </Menu>
                 </Sider>
                 <Content>
