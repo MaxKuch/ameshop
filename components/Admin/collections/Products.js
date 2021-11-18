@@ -115,8 +115,7 @@ export default function Products(){
        
     }
 
-    const editHandler = async (values) => {
-
+    const editHandler = async (values) => { 
         setIsEditLoading(true)
         try {
             await Promise.all(filesToDelete.map(id => axios.delete(`/media/${id}`, requestConfig)))

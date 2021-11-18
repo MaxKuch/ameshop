@@ -16,12 +16,11 @@ export const valuesToFormData = async values => {
     const formData = new FormData()
     
     const data = Object.keys(values).reduce((data, key) => {
-        if(!values[key])
+        if(values[key] === undefined || values[key] === null)
             return data
         if(typeof values[key] !== 'object') 
             return {...data, [key]: values[key]}
         if(values[key].fileList){
-            console.log(values[key].fileList)
             for(const file of values[key].fileList) {
                 if(file.originFileObj) 
                     formData.append(`files.${key}`, file.originFileObj, file.name)

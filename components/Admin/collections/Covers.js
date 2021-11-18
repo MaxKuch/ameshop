@@ -97,7 +97,6 @@ export default function Covers(){
     const editHandler = async (values) => {
         setIsEditLoading(true)
         const formData = await valuesToFormData(values)
-        console.log(values)
         
         try {
             const { data: eCover } = await axios.put(`/covers/${currentCover.id}`, formData, requestConfig)
@@ -168,7 +167,7 @@ export default function Covers(){
                     handleAudioChange={(files) => {
                         setAudio(files.fileList)             
                     }}
-                    onFieldsChange={async newFields => {
+                    onFieldsChange={newFields => {
                         const newField = newFields[0]
 
                         if(!newField.name.includes('audio')){
